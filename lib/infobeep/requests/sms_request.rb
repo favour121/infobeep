@@ -24,7 +24,7 @@ module Infobeep
     end
 
     def route
-      'text/advanced'
+      'sms/1/text/advanced'
     end
 
     def http_method

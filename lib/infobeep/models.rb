@@ -37,6 +37,11 @@ module Infobeep
     attribute :currency, String
   end
 
+  class AccountBalance < Model
+    attribute :balance, BigDecimal
+    attribute :currency, String
+  end
+
   class SMSResponseDetail < Model
     attribute :to, String
     attribute :status, Status

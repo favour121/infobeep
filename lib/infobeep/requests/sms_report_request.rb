@@ -11,7 +11,7 @@ module Infobeep
     end
 
     def route
-      'reports'
+      'sms/1/reports'
     end
 
     def response_class
