@@ -3,7 +3,7 @@ require 'json'
 module Infobeep
 
   class Model
-    include ::Virtus.model
+    include ::Virtus.model(nullify_blank: true)
 
     def hash_attributes
       attributes
