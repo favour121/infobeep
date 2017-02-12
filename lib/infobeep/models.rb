@@ -74,8 +74,7 @@ module Infobeep
     attribute :bulkId, String
     attribute :messageId, String
     attribute :to, String
-    attribute :from, String
-    attribute :text, String
+    attribute :callbackData, String
     attribute :sentAt, DateTime
     attribute :doneAt, DateTime
     attribute :smsCount, Integer
