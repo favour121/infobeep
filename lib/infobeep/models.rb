@@ -89,7 +89,7 @@ module Infobeep
   end
 
   class SMSReportResponse < Model
-    attribute :results, Array[SentSMSLog]
+    attribute :results, Array[SentSMSReport]
   end
 
 end
