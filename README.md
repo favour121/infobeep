@@ -1,5 +1,7 @@
 # Infobeep
 
+Ruby Gem for InfoBip SMS Services
+
 ## Installation
 
 Add this line to your application's Gemfile:
