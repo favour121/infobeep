@@ -1,6 +1,6 @@
 # Infobeep
 
-Ruby Gem for InfoBip SMS Services
+Ruby Gem for [InfoBip SMS Services](https://www.infobip.com/)
 
 ## Installation
 
@@ -20,7 +20,7 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+TODO: Write usage instructions
 
 ## Development
 
