@@ -25,9 +25,7 @@ TODO: Write proper usage instructions
 
 ```ruby
 # Create Client
-username = 'username'
-password = 'password'
-infobeep_client = Infobeep::Client.new(username, password)
+infobeep_client = Infobeep::Client.new('username', 'password')
 
 # Create Request
 infobeep_log_request = Infobeep::SMSLogRequest.new
@@ -39,11 +37,11 @@ log_request_response = infobeep_client.send_request(infobeep_log_request)
 
 ###  Supported Request Types
 ```ruby
-Infobeep::SMSRequest // For sending a single message to several mobie numbers
-Infobeep::BulkSMSRequest // For sending multiple messages to multiple phone numbers sing one identifier (bulkMessageID)
-Infobeep::SMSLogRequest // Fetch SMS Logs
-Infobeep::SMSReportRequest // Fetch SMS Reports
-Infobeep::AccountBalanceRequest // Get account balance
+Infobeep::SMSRequest # For sending a single message to several mobie numbers
+Infobeep::BulkSMSRequest # For sending multiple messages to multiple phone numbers sing one identifier (bulkMessageID)
+Infobeep::SMSLogRequest # Fetch SMS Logs
+Infobeep::SMSReportRequest # Fetch SMS Reports
+Infobeep::AccountBalanceRequest # Get account balance
 ```
 
 
