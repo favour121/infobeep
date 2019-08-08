@@ -63,9 +63,9 @@ end
 infobeep_msg_request = Infobeep::SMSRequest.new
 infobeep_msg_request.from = 'Sender Name'
 infobeep_msg_request.text = 'Hello World!'
-infobeep_msg_request.notifyUrl = 'https://www.bluebic.com/' // callback URL to receive intermediate delivery update
-infobeep_msg_request.intermediateReport = true // Send intermediate delivery report updates
-infobeep_msg_request.callbackData = {username: 'kheiron', token: Random.uuid}.to_json // data to append to delivery report updates
+infobeep_msg_request.notifyUrl = 'https://www.bluebic.com/' # callback URL to receive intermediate delivery update
+infobeep_msg_request.intermediateReport = true # Send intermediate delivery report updates
+infobeep_msg_request.callbackData = {username: 'kheiron', token: Random.uuid}.to_json # data to append to delivery report updates
 infobeep_msg_request.destinations = destinations
 
 # send simple message
@@ -73,8 +73,8 @@ sms_request_response = infobeep_client.send_request(infobeep_msg_request)
 
 # we can also create and send send a BulkSMSRequest
 infobeep_bulk_msg_request = Infobeep::BulkSMSRequest.new
-infobeep_bulk_msg_request.bulkId = generate_unique_id_for_message_group // leave blank to have Infobip API generate
-infobeep_bulk_msg_request.messages = [infobeep_msg_request] // Array of Infobeep::SMSRequest
+infobeep_bulk_msg_request.bulkId = generate_unique_id_for_message_group # leave blank to have Infobip API generate
+infobeep_bulk_msg_request.messages = [infobeep_msg_request] # Array of Infobeep::SMSRequest
 
 bulk_sms_request_response = infobeep_client.send_request(infobeep_bulk_msg_request)
 
