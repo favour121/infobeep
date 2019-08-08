@@ -88,7 +88,7 @@ For more Info see:
 Request classes contain all supported request types.
 
 * Model Classes: https://github.com/favour121/infobeep/blob/master/lib/infobeep/models.rb<br/>
-Model classes contain all payload/response data classes to be sent or received.
+Model classes contain all payload/response data classes that is sent or received.
 
 
 ## Development
