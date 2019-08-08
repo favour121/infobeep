@@ -64,7 +64,7 @@ infobeep_msg_request.from = 'Sender Name'
 infobeep_msg_request.text = 'Hello World!'
 infobeep_msg_request.notifyUrl = 'https://www.bluebic.com/' # callback URL to receive intermediate delivery update
 infobeep_msg_request.intermediateReport = true # Send intermediate delivery report updates
-infobeep_msg_request.callbackData = {username: 'kheiron', token: Random.uuid}.to_json # data to append to delivery report updates
+infobeep_msg_request.callbackData = {username: 'kheiron', token: SecureRandom.uuid}.to_json # data to append to delivery report updates
 infobeep_msg_request.destinations = destinations
 
 # send simple message
