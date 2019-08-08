@@ -56,7 +56,7 @@ infobeep_client = Infobeep::Client.new('username', 'password')
 
 get_sms_message_recipients.each do |recipient|
     infobeep_destination = Infobeep::SMSRequestDestination.new
-    infobeep_destination.messageId = generate_unique_id_for_receipient_message // leave blank to have Infobip API generate
+    infobeep_destination.messageId = generate_unique_id_for_receipient_message # leave blank to have Infobip API generate
     infobeep_destination.to = recipient.mobile_number
     destinations << infobeep_destination
 end
