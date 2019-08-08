@@ -30,7 +30,7 @@ password = 'password'
 infobeep_client = Infobeep::Client.new(username, password)
 
 # Create Request
-infobeep_request = Infobeep::SMSLogRequest.new
+infobeep_log_request = Infobeep::SMSLogRequest.new
 infobeep_log_request.bulkId = bulk_sms_to_fetch_logs_for.id
 
 # Send Request and get response
