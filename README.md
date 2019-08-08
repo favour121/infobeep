@@ -1,6 +1,6 @@
 # Infobeep
 
-Ruby Gem for [InfoBip SMS Services](https://www.infobip.com/)
+Ruby Gem for [InfoBip SMS Services](https://dev.infobip.com/getting-started)
 
 ## Installation
 
@@ -37,10 +37,10 @@ log_request_response = infobeep_client.send_request(infobeep_log_request)
 
 ###  Supported Request Types
 ```ruby
-Infobeep::SMSRequest # For sending a single message to several mobie numbers
-Infobeep::BulkSMSRequest # For sending multiple messages to multiple phone numbers sing one identifier (bulkMessageID)
-Infobeep::SMSLogRequest # Fetch SMS Logs
-Infobeep::SMSReportRequest # Fetch SMS Reports
+Infobeep::SMSRequest # Send a single message to several mobie numbers
+Infobeep::BulkSMSRequest # Send multiple messages to multiple phone numbers
+Infobeep::SMSLogRequest # Get sent SMS Logs
+Infobeep::SMSReportRequest # Get SMS Delivery Reports
 Infobeep::AccountBalanceRequest # Get account balance
 ```
 
