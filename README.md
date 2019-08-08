@@ -52,6 +52,7 @@ Infobeep::AccountBalanceRequest // Get account balance
 ```ruby
 destinations = []
 sms_message_recipients = get_sms_message_recipients
+infobeep_client = Infobeep::Client.new('username', 'password')
 
 get_sms_message_recipients.each do |recipient|
     infobeep_destination = Infobeep::SMSRequestDestination.new
