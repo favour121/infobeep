@@ -26,7 +26,7 @@ infobeep_client = Infobeep::Client.new('username', 'password')
 
 # Create Request
 infobeep_log_request = Infobeep::SMSLogRequest.new
-infobeep_log_request.bulkId = bulk_sms_to_fetch_logs_for.id
+infobeep_log_request.bulkId = 'id_of_bulk_sms_to_fetch_logs_for'
 
 # Send Request and get response
 log_request_response = infobeep_client.send_request(infobeep_log_request)
@@ -45,13 +45,14 @@ Infobeep::AccountBalanceRequest # Get account balance
 ### Example: Send bulk SMS
 
 ```ruby
-destinations = []
-sms_message_recipients = get_sms_message_recipients
 infobeep_client = Infobeep::Client.new('username', 'password')
 
+destinations = []
+unique_id = 0
 get_sms_message_recipients.each do |recipient|
+    unique_id++
     infobeep_destination = Infobeep::SMSRequestDestination.new
-    infobeep_destination.messageId = generate_unique_id_for_receipient_message # leave blank to have Infobip API generate
+    infobeep_destination.messageId = unique_id # leave blank to have Infobip API generate ID
     infobeep_destination.to = recipient.mobile_number
     destinations << infobeep_destination
 end
@@ -59,17 +60,17 @@ end
 infobeep_msg_request = Infobeep::SMSRequest.new
 infobeep_msg_request.from = 'Sender Name'
 infobeep_msg_request.text = 'Hello World!'
-infobeep_msg_request.notifyUrl = 'https://www.bluebic.com/' # callback URL to receive intermediate delivery update
 infobeep_msg_request.intermediateReport = true # Send intermediate delivery report updates
+infobeep_msg_request.notifyUrl = 'https://www.bluebic.com/' # callback URL to receive intermediate delivery update
 infobeep_msg_request.callbackData = {username: 'kheiron', token: SecureRandom.uuid}.to_json # data to append to delivery report updates
 infobeep_msg_request.destinations = destinations
 
 # send simple message
 sms_request_response = infobeep_client.send_request(infobeep_msg_request)
 
-# we can also create and send send a BulkSMSRequest
+# we can also create and send a Bulk SMS Request
 infobeep_bulk_msg_request = Infobeep::BulkSMSRequest.new
-infobeep_bulk_msg_request.bulkId = generate_unique_id_for_message_group # leave blank to have Infobip API generate
+infobeep_bulk_msg_request.bulkId = 'unique_id_for_message_group' # leave blank to have Infobip API generate
 infobeep_bulk_msg_request.messages = [infobeep_msg_request] # Array of Infobeep::SMSRequest
 
 bulk_sms_request_response = infobeep_client.send_request(infobeep_bulk_msg_request)
