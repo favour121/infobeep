@@ -14,29 +14,28 @@ module Infobeep
 
     def hash_attributes
       h = super
-      h[:destinations] = []
-      h[:destinations] =  h[:destinations] + destinations.collect{ |destination| destination.hash_attributes }
-      unless to.empty?
-        h[:destinations] << {to: to}
-      end
-      h.delete(:to)
+      h.delete(:bulkId)
+      h.delete(:messages)
+      h.delete(:destinations)
+      h.delete(:notifyUrl)
+      h.delete(:notifyContentType)
+      h.delete(:callbackData)
+      h.delete(:intermediateReport)
       h
     end
 
     def route
-      'sms/1/text/advanced'
+      'sms/2/text/single'
+    end
+
+    def payload
+      hash_attributes.to_json
     end
 
     def http_method
       :post
     end
-
-    def payload
-      bulk_sms_request = Infobeep::BulkSMSRequest.new
-      bulk_sms_request.messages = [self]
-      bulk_sms_request.payload
-    end
-
+    
     def response_class
       SMSResponse
     end

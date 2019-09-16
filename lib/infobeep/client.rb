@@ -5,11 +5,11 @@ require 'rest-client'
 module Infobeep
 
   class Client
-    API_BASE_URL = 'https://api.infobip.com/'
+    API_BASE_URL = 'https://26l26.api.infobip.com/'
 
-    def initialize(username, password)
-      @username = username
-      @password = password
+    def initialize(key, user_id)
+      @key = key
+      @user = User.find(user_id)
     end
 
     def send_request(sms_request)
@@ -29,8 +29,7 @@ module Infobeep
     end
 
     def authentication_headers
-      auth_string = ::Base64.encode64("#{@username}:#{@password}").strip
-      {'Authorization': "Basic #{auth_string}"}
+      {'Authorization': "App #{@key}"}
     end
 
     def client_headers
